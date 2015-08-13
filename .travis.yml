@@ -1,3 +1,7 @@
 language: objective-c
 script: 
 - xctool build -project TBRFontSizeAccessibility.xcodeproj -scheme TBRFontSizeAccessibility -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
+branches:
+  only:
+    - master
