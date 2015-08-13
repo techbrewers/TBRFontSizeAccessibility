@@ -43,7 +43,7 @@ extension UINavigationBar {
       
       var newTitleTextAttributes = self.titleTextAttributes
       if newTitleTextAttributes == nil {
-        newTitleTextAttributes = [NSObject : AnyObject]()
+        newTitleTextAttributes = [String : AnyObject]?()
       }
       let accesibleFont = self.originalFont.fontWithSize(self.originalFont.pointSize + AccessibilityPointSize.offset())
       newTitleTextAttributes?.updateValue(accesibleFont, forKey: NSFontAttributeName)
@@ -59,7 +59,7 @@ extension UITabBarItem {
     accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
       var newTitleTextAttributes = self.titleTextAttributesForState(.Normal)
       if newTitleTextAttributes == nil {
-        newTitleTextAttributes = [NSObject : AnyObject]()
+        newTitleTextAttributes = [String : AnyObject]?()
       }
       let accesibleFont = self.originalFont.fontWithSize(self.originalFont.pointSize + AccessibilityPointSize.offset())
       newTitleTextAttributes?.updateValue(accesibleFont, forKey: NSFontAttributeName)

@@ -41,7 +41,7 @@ public extension NSObject {
       return objc_getAssociatedObject(self, &AssociationKeyChangeObserver) as? AccessibilitySizeChangeObserver
     }
     set(newAccessibilityChangeObserver) {
-      objc_setAssociatedObject(self, &AssociationKeyChangeObserver, newAccessibilityChangeObserver, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKeyChangeObserver, newAccessibilityChangeObserver, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
       newAccessibilityChangeObserver.closure();
     }
   }
@@ -52,7 +52,7 @@ public extension NSObject {
       return objc_getAssociatedObject(self, &AssociationKeyOriginalFont) as? UIFont
     }
     set(newAccessibilityChangeObserver) {
-      objc_setAssociatedObject(self, &AssociationKeyOriginalFont, newAccessibilityChangeObserver, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKeyOriginalFont, newAccessibilityChangeObserver, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
     }
   }
 }
