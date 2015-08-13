@@ -12,7 +12,7 @@ import UIKit
 extension UILabel {
  public func accessibilityFont(fontParameter:UIFont) {
     originalFont = fontParameter
-    accesibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
+    accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
       self.font = self.originalFont.fontWithSize(self.originalFont.pointSize + AccessibilityPointSize.offset())
     })
   }
@@ -21,7 +21,7 @@ extension UILabel {
 extension UITextView {
   public func accessibilityFont(fontParameter:UIFont) {
     originalFont = fontParameter
-    accesibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
+    accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
       self.font = self.originalFont.fontWithSize(self.originalFont.pointSize + AccessibilityPointSize.offset())
     })
   }
@@ -30,7 +30,7 @@ extension UITextView {
 extension UITextField {
   public func accessibilityFont(fontParameter:UIFont) {
     originalFont = fontParameter
-    accesibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
+    accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
       self.font = self.originalFont.fontWithSize(self.originalFont.pointSize + AccessibilityPointSize.offset())
     })
   }
@@ -39,7 +39,7 @@ extension UITextField {
 extension UINavigationBar {
   public func accessibilityFont(fontParameter:UIFont) {
     originalFont = fontParameter
-    accesibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
+    accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
       
       var newTitleTextAttributes = self.titleTextAttributes
       if newTitleTextAttributes == nil {
@@ -56,7 +56,7 @@ extension UINavigationBar {
 extension UITabBarItem {
   public func accessibilityFont(fontParameter:UIFont) {
     originalFont = fontParameter
-    accesibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
+    accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
       var newTitleTextAttributes = self.titleTextAttributesForState(.Normal)
       if newTitleTextAttributes == nil {
         newTitleTextAttributes = [NSObject : AnyObject]()

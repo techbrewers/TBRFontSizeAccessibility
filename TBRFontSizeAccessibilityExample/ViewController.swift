@@ -19,16 +19,19 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let defaultFont = UIFont.systemFontOfSize(20);
 
-    accesibleLabel.accessibilityFont(defaultFont)
-    accesibleTextView.accessibilityFont(defaultFont)
-    accesibleTextField.accessibilityFont(defaultFont)
-    accesibleButton.titleLabel?.accessibilityFont(defaultFont)
-    navigationController?.navigationBar.accessibilityFont(defaultFont)
+    // Base font
+    let baseFont = UIFont.systemFontOfSize(20);
 
-    accesibleLabel.accesibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
-      self.accesibleLabel.font = defaultFont.fontWithSize(defaultFont.pointSize + AccessibilityPointSize.offset())
+    accesibleLabel.accessibilityFont(baseFont)
+    accesibleTextView.accessibilityFont(baseFont)
+    accesibleTextField.accessibilityFont(baseFont)
+    accesibleButton.titleLabel?.accessibilityFont(baseFont)
+    navigationController?.navigationBar.accessibilityFont(baseFont)
+
+    // Use this block if you want your object to listen for accessibility changes on unsupported classes
+    accesibleLabel.accessibilityChangeObserver = AccessibilitySizeChangeObserver(fromObject:self, fromClosure:{ [unowned self] in
+      self.accesibleLabel.font = baseFont.fontWithSize(baseFont.pointSize + AccessibilityPointSize.offset())
       })
 
   }

@@ -36,7 +36,7 @@ private var AssociationKeyChangeObserver: UInt8 = 0
 private var AssociationKeyOriginalFont: UInt8 = 0
 
 public extension NSObject {
-  public var accesibilityChangeObserver: (AccessibilitySizeChangeObserver)! {
+  public var accessibilityChangeObserver: (AccessibilitySizeChangeObserver)! {
     get {
       return objc_getAssociatedObject(self, &AssociationKeyChangeObserver) as? AccessibilitySizeChangeObserver
     }
